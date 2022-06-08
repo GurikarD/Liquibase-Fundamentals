@@ -1,0 +1,47 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.6.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
+    <changeSet author="k0175" id="1">
+        <createTable tableName="DEPARTMENT">
+            <column name="ID" type="NUMBER">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="DEPT_NAME" type="VARCHAR2(100 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DEPT_DESCRIPTION" type="VARCHAR2(1000 BYTE)">
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="k0175" author="Devaraj">
+        <createTable tableName="EMPLOYEES">
+            <column name="ID" type="NUMBER">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="NAME" type="VARCHAR2(100 BYTE)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DEPARTMENT_ID" type="NUMBER">
+                <constraints nullable="false" foreignKeyName="DEPARTMENT_ID_FK" references="DEPARTMENT(ID)"/>
+            </column>
+            <column name="DESIGNATION" type="VARCHAR2(250 BYTE)"/>
+            <column name="SALARY" type="NUMBER"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="k0175" id="story-001">
+        <sqlFile
+          encoding="utf8"
+          endDelimiter=";"
+          path="scripts/REL-2022-08-06/STORY-001.sql"
+          relativeToChangelogFile="true"
+          splitStatements="true"
+          stripComments="true"/>
+    </changeSet>
+
+    <changeSet id="story-001_1" author="k0175">
+        <preConditions  onFail="WARN">
+            <sqlCheck  expectedResult="0">select count(*) from employees</sqlCheck>
+        </preConditions>
+        <comment>Comments should go after preCondition. If they are located before the precondition, then Liquibase usually gives error.</comment>
+        <dropTable  tableName="employees"/>
+    </changeSet>
+</databaseChangeLog>
