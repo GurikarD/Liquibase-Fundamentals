@@ -26,6 +26,8 @@ Liquibase is a database migration tool that helps to track, and deploy database 
 Database used: **MySQL**
 
 
-**References**
+**References:** <br/>
+[Liquibase University Fundamentals Course](https://learn.liquibase.com/catalog/info/id:125) <br/>
+[How liquibase works?](https://www.liquibase.com/how-liquibase-works) <br/>
+[What affects changeset checksumgs](https://www.liquibase.com/blog/what-affects-changeset-checksums/) <br/>
 
-[Liquibase University Fundamentals Course](https://learn.liquibase.com/catalog/info/id:125)
