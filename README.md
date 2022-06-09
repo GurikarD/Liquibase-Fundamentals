@@ -11,6 +11,19 @@ Liquibase is a database migration tool that helps to track, and deploy database 
 
 **changelog  <-  changesets  <-  change types**
 
+**Maven Liquibase Commands**
+- mvn liquibase:generateChangeLog
+- mvn liquibase:status
+- mvn liquibase:updateSQL
+- mvn liquibase:update
+- mvn liquibase:rollback -Dliquibase.rollbackCount=1
+- mvn liquibase:history
+- mvn liquibase:diff
+- mvn liquibase:changeLogSync
+- mvn liquibase:clearCheckSums
+
+
+
 **References**
 
 [Liquibase University Fundamentals](https://learn.liquibase.com/catalog/info/id:125)
