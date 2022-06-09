@@ -26,4 +26,4 @@ Liquibase is a database migration tool that helps to track, and deploy database 
 
 **References**
 
-[Liquibase University Fundamentals](https://learn.liquibase.com/catalog/info/id:125)
+[Liquibase University Fundamentals Course](https://learn.liquibase.com/catalog/info/id:125)
