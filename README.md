@@ -23,6 +23,8 @@ Liquibase is a database migration tool that helps to track, and deploy database 
 - mvn liquibase:clearCheckSums
 
 
+Database used: **MySql**
+
 
 **References**
 
